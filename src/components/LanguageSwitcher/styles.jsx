@@ -3,13 +3,12 @@ import styled from "styled-components";
 
 export const TitleLanguageSwitcher = styled.h2`
     font-weight: bold;
-
 `;
 
 export const LanguagueCircle = styled.img`
     width: 50px;
     border-radius: 50%; 
-    border: 1px solid #363636;
+    border: 1px solid;
     margin: 10px 15px;
     cursor: pointer;
 `;

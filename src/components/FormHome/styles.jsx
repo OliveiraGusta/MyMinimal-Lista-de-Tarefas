@@ -26,7 +26,7 @@ export const ProfileImage = styled.img`
     width: 130px;
     height: 100%;
     border-radius: 50%; 
-    border: 1px solid #363636;
+    border: 1px solid;
     margin-top: -15px;
     margin-right: 15px;
 `;
@@ -66,7 +66,7 @@ export const InputField = styled.div`
         height: 100%;
         background-color: transparent !important;
         outline: none;
-        border: 1px solid #363636;
+        border: 1px solid;
         border-radius: 10px;
         font-size: 16px;
         padding: 20px;
@@ -87,7 +87,7 @@ export const ResetColorsButton = styled.button`
     transition: border 0.3s ease-in-out; 
 
     &:hover {
-        border-bottom: 1px solid black; 
+        border-bottom: 1px solid; 
         margin-top: -1px;
 }
 `

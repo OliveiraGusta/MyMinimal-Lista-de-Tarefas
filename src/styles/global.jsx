@@ -7,10 +7,10 @@ const GlobalStyle = createGlobalStyle `
         box-sizing: border-box;
         font-family: 'OpenSans',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
         font-weight: 400;
-        color: #363636;
+        color: ${props => (props.theme.colors.primary)};
     }
     body{
-        background-color: #ffffff;
+        background-color:  ${props => (props.theme.colors.background)};
     }
 `;
 
