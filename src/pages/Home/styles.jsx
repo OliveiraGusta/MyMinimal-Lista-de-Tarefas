@@ -27,14 +27,13 @@ export const ContainerForm = styled.div`
 export const ButtonStart= styled.button`
     padding: 10px 50px ;
     background-color: transparent;
-    border: 1px solid #363636;
+    border: 1px solid;
     border-radius: 10px;
-    color: #363636;
     font-size: 20px;
     cursor: pointer;
 
     &:hover{
-        border: 1px solid #363636;
+        border: 1px solid;
         font-weight: bold;
     }
     `;
