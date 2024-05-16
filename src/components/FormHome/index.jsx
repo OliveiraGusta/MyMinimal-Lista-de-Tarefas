@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-import { Container, FormTitle, ProfileImage, PreviewCircleColor, ContainerCircles, ContainerForm, FormInputs, InputField } from "./styles";
+import { Container, FormTitle, ProfileImage, PreviewCircleColor, ContainerCircles, SubTitleInput, ContainerForm, FormInputs, InputField, ResetColorsButton } from "./styles";
 
 function FormHome(props) {
   const [name, setName] = useState("");
   const [github, setGithub] = useState("");
-
+  const [photoGithub, setPhotoGithub] = useState("./src/assets/images/logos/person-icon.png");
   const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
   const [mainColor, setMainColor] = useState("#363636");
+
 
   return (
     <Container>
@@ -17,11 +18,12 @@ function FormHome(props) {
         <ContainerForm>
           {props.title == 'Cores' ?
             <ContainerCircles>
-              <PreviewCircleColor/>
-              <PreviewCircleColor />
+              <PreviewCircleColor color={mainColor} border={backgroundColor}/>
+              <PreviewCircleColor color={backgroundColor} border={mainColor}/>
             </ContainerCircles>
             :
-            <ProfileImage src='https://github.com/OliveiraGusta.png' alt='Foto de Perfil do GitHub' />
+            <ProfileImage src={photoGithub} onError="./src/assets/images/logos/person-icon.png"
+            alt='Foto de Perfil do GitHub' />
           }
           <FormInputs>
             <InputField>
@@ -40,14 +42,19 @@ function FormHome(props) {
                   onChange={(e) => { setBackgroundColor(e.target.value) }} />
                 :
                 <input type="text" placeholder="github.com/"
-                  onChange={(e) => { setGithub(e.target.value) }} />
+                  onChange={(e) => { setGithub(e.target.value)
+                    setPhotoGithub(`https://github.com/${github}.png`)
+                  }} />
               }
             </InputField>
 
             {props.title == 'Cores' ?
-              <div><p>Claro Escuro</p></div>
+              <SubTitleInput>
+                <ResetColorsButton onClick={console.log("Reseto as cores Claro")}>Claro</ResetColorsButton>
+                <ResetColorsButton onClick={console.log("Reseto as cores Escuro")}>Escuro</ResetColorsButton>
+              </SubTitleInput>
               :
-              <p>Caso não tenha uma conta Github apenas deixe em branco </p>
+              <SubTitleInput>Caso não tenha uma conta Github apenas deixe em branco </SubTitleInput>
             }
 
           </FormInputs>

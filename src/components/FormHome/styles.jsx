@@ -43,8 +43,8 @@ export const PreviewCircleColor = styled.div`
     margin: 10px auto;
     border-radius: 50%; 
 
-    background-color: #ffffff; 
-    border: 1px solid #363636; 
+    background-color: ${(props) => (props.color)};
+    border: 1px solid ${(props) => (props.border)}; 
     transform: translateY(-22%);
     margin-right: 15px;
 
@@ -74,3 +74,20 @@ export const InputField = styled.div`
     }
 
 `;
+
+export const SubTitleInput = styled.div`
+    display: flex;
+        
+`
+export const ResetColorsButton = styled.button`
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer; 
+    transition: border 0.3s ease-in-out; 
+
+    &:hover {
+        border-bottom: 1px solid black; 
+        margin-top: -1px;
+}
+`
