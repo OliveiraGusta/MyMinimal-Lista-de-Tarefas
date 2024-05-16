@@ -11,6 +11,10 @@ export const LanguagueCircle = styled.img`
     border: 1px solid;
     margin: 10px 15px;
     cursor: pointer;
+
+    &:hover{
+        border: none;
+    }
 `;
 
 export const ContainerLanguageSwitcher = styled.div`

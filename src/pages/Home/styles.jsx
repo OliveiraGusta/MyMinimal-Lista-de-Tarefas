@@ -29,11 +29,13 @@ export const ButtonStart= styled.button`
     background-color: transparent;
     border: 1px solid;
     border-radius: 10px;
+
     font-size: 20px;
+    font-height: bold;
     cursor: pointer;
 
     &:hover{
-        border: 1px solid;
-        font-weight: bold;
+        margin: -1px;
+        border: 2px solid;
     }
     `;

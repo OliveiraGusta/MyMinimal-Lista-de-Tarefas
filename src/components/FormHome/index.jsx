@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { theme }  from "../../styles/theme";
 
 import { Container, FormTitle, ProfileImage, PreviewCircleColor, ContainerCircles, SubTitleInput, ContainerForm, FormInputs, InputField, ResetColorsButton } from "./styles";
 
@@ -6,14 +7,24 @@ function FormHome(props) {
   const [name, setName] = useState("");
   const [github, setGithub] = useState("");
   const [photoGithub, setPhotoGithub] = useState("./src/assets/images/logos/person-icon.png");
-  const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
-  const [mainColor, setMainColor] = useState("#363636");
 
+  const [backgroundColor, setBackgroundColor] = useState(theme.colors.background);
+  const [mainColor, setMainColor] = useState(theme.colors.primary);
+
+  const handleSetLight = () => {
+    event.preventDefault();
+    setMainColor('#363636');
+    setBackgroundColor('#FFFFFF');
+    };
+  const handleSetDark = () => {
+    event.preventDefault();
+    setMainColor('#FFFFFF');
+    setBackgroundColor('#363636');
+  };
 
   return (
     <Container>
       <form onSubmit={console.log(name)}>
-
         <FormTitle>{props.title}</FormTitle>
         <ContainerForm>
           {props.title == 'Cores' ?
@@ -22,13 +33,12 @@ function FormHome(props) {
               <PreviewCircleColor color={backgroundColor} border={mainColor}/>
             </ContainerCircles>
             :
-            <ProfileImage src={photoGithub} onError="./src/assets/images/logos/person-icon.png"
-            alt='Foto de Perfil do GitHub' />
+            <ProfileImage src={photoGithub} alt='Foto de Perfil do GitHub' />
           }
           <FormInputs>
             <InputField>
               {props.title == 'Cores' ?
-                <input type="text" placeholder={mainColor}
+                <input type="text" value={mainColor} placeholder="Cor principal"
                 onChange={(e) => { setMainColor(e.target.value) }} />
                 :
                 <input type="text" placeholder="Seu nome"
@@ -38,7 +48,7 @@ function FormHome(props) {
 
             <InputField>
               {props.title == 'Cores' ?
-                <input type="text" placeholder={backgroundColor}
+                <input type="text" value={backgroundColor} placeholder="Cor de fundo"
                   onChange={(e) => { setBackgroundColor(e.target.value) }} />
                 :
                 <input type="text" placeholder="github.com/"
@@ -50,8 +60,8 @@ function FormHome(props) {
 
             {props.title == 'Cores' ?
               <SubTitleInput>
-                <ResetColorsButton onClick={console.log("Reseto as cores Claro")}>Claro</ResetColorsButton>
-                <ResetColorsButton onClick={console.log("Reseto as cores Escuro")}>Escuro</ResetColorsButton>
+                <ResetColorsButton onClick={handleSetLight}>Claro</ResetColorsButton>
+                <ResetColorsButton onClick={handleSetDark}>Escuro</ResetColorsButton>
               </SubTitleInput>
               :
               <SubTitleInput>Caso não tenha uma conta Github apenas deixe em branco </SubTitleInput>
