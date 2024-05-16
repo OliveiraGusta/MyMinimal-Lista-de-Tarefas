@@ -16,34 +16,37 @@ export const ContainerForm = styled.div`
     flex-direction: row;
     align-items: center;
     margin-top: 20px;
+
+    & input{
+        margin-right: 50px;
+    }
 `;
 
 export const ProfileImage = styled.img`
-    width: 120px;
+    width: 130px;
     height: 100%;
     border-radius: 50%; 
     border: 1px solid #363636;
+    margin-top: -15px;
     margin-right: 15px;
 `;
 
 export const ContainerCircles = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: -10px;
+  
 `;
-
 
 export const PreviewCircleColor = styled.div`
     width: 50px; 
     height: 50px; 
-    position: relative;
-    margin: 10px 0;
+    margin: 10px auto;
     border-radius: 50%; 
 
     background-color: #ffffff; 
     border: 1px solid #363636; 
-    transform: translateY(-25%);
+    transform: translateY(-22%);
+    margin-right: 15px;
 
 `;
 
@@ -59,7 +62,7 @@ export const InputField = styled.div`
     margin: 10px auto;
     
     & input{
-        width: 100%;
+        width: 400px;
         height: 100%;
         background-color: transparent !important;
         outline: none;

@@ -1,4 +1,4 @@
-import { ContainerTitle, TitleHead } from './styles.jsx';
+import { ContainerTitle, TitleHead, SubTitleHead } from './styles.jsx';
 
 function Title() {
   const language = 'pt-br';
@@ -6,7 +6,7 @@ function Title() {
   return (
     <ContainerTitle>
       <TitleHead>My<b>Minimal</b></TitleHead>
-    <p>{language == 'pt-br' ? 'Lista de Tarefas' : 'To-do List'}</p>
+      <SubTitleHead>{language == 'pt-br' ? 'Lista de Tarefas' : 'To-do List'}</SubTitleHead>
 
     
     </ContainerTitle>)

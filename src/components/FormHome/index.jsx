@@ -18,7 +18,7 @@ function FormHome(props) {
           {props.title == 'Cores' ?
             <ContainerCircles>
               <PreviewCircleColor/>
-              <PreviewCircleColor/>
+              <PreviewCircleColor />
             </ContainerCircles>
             :
             <ProfileImage src='https://github.com/OliveiraGusta.png' alt='Foto de Perfil do GitHub' />

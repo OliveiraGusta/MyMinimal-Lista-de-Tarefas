@@ -8,9 +8,10 @@ const GlobalStyle = createGlobalStyle `
         font-family: 'OpenSans',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
         font-weight: 400;
         color: #363636;
-        background-color: #FFFFFF;
     }
-
+    body{
+        background-color: #ffffff;
+    }
 `;
 
 export default GlobalStyle;
