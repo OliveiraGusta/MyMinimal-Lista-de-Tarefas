@@ -1,14 +1,18 @@
-import { Container } from "./styles"
-import { Link } from "react-router-dom"
+import { Container, Options, List } from "./styles"
+import Profile from  '../../components/Profile';
+import NewTaskForm from  '../../components/NewTaskForm';
 
 function ToDoList() {
   return (
     <Container>
-      ToDoList
-      <Link to="/home">Começar</Link>
-
+      <Options>
+        <Profile/>
+          <NewTaskForm/>
+      </Options>
+      <List>
+        LISTA
+      </List>
     </Container>
-
   )
 }
 

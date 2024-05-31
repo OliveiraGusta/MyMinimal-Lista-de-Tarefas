@@ -7,7 +7,7 @@ import ToDoList from './pages/ToDoList';
 const routes = (
   <Routes>
     <Route path="/" element={<App />}>
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/" element={<Navigate to="/dashboard" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/dashboard" element={<ToDoList />} />
       <Route path="*" element={<ErrorPage />} />

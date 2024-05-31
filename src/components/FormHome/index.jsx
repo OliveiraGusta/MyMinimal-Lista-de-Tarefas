@@ -28,8 +28,9 @@ function FormHome(props) {
   };
 
   const handlePhotoGithubChange = (e) => {
-    setGithubUsername(e.target.value);
-    setImageGithub(`https://github.com/${e.target.value}.png`);
+    const username = e.target.value;
+    setGithubUsername(username);
+    setImageGithub(`https://github.com/${username}.png`);
   };
 
   const handleImageError = () => {
